@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'grpc-spring-angular-auth';
+
+  constructor(private service: ApiService) {
+  }
+
+  ngOnInit() {
+    this.service.fibonacci(10).subscribe(response => {
+      console.log(response);
+    })
+  }
 }
