@@ -13,7 +13,7 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.service.fibonacci(10).subscribe(response => {
+    this.service.fibonacci(10).then(response => {
       console.log(response);
     })
   }
